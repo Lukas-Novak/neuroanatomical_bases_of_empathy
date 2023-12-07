@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  rstudio:
+    build: .
+    ports:
+      - "8585:8585"
+    volumes:
+      - ./:/home/rstudio
+      - ./.Rprofile:/home/rstudio/.Rprofile
+      - ./renv:/home/rstudio/renv
+    environment:
+      - DISABLE_AUTH=true
